@@ -19,12 +19,12 @@ Using Azure PowerShell, do the following to create a resource group for the lab:
 
     ```sql
     SELECT   system.timestamp AS endtime,
-            dspl             AS sensorname,
-            Count(*)         AS numreadings
-            INTO     output
+             dspl             AS sensorname,
+             Count(*)         AS numreadings
+             INTO     output
     FROM     inputstream TIMESTAMP by time
     GROUP BY tumblingwindow(minute, 10),
-            dspl
+             dspl
     ```
 
 1. Upload the data in `data/iot-data.json` as the sample input.
